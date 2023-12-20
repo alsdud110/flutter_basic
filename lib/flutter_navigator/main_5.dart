@@ -1,10 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_2/flutter_navigator/main_4_2.dart';
+import 'package:flutter_application_2/main_2.dart';
 import 'package:go_router/go_router.dart';
 
 void main() {
-  runApp(
-    MaterialApp.router(
+  runApp(const MyApp());
+}
+
+class MyApp extends StatelessWidget {
+  const MyApp({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return MaterialApp.router(
+      debugShowCheckedModeBanner: false,
       routerConfig: GoRouter(
         initialLocation: "/",
         routes: [
@@ -25,8 +34,8 @@ void main() {
           ),
         ],
       ),
-    ),
-  );
+    );
+  }
 }
 
 class HomePage extends StatelessWidget {
